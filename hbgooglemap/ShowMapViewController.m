@@ -38,9 +38,12 @@
     // Do any additional setup after loading the view.
     
     /**
-     * 设置我的地点定位
+     * 设置我的地点定位,两条都要设置
      */
     self.mapView.settings.myLocationButton = YES;
+    self.mapView.myLocationEnabled = YES;
+    
+    NSLog(@"User's location: %@", self.mapView.myLocation);
     
     /**
      * 设置指南针
@@ -128,7 +131,8 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 
 - (void)mapView:(GMSMapView *)mapView
 idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
-    id handler = ^(GMSReverseGeocodeResponse *response, NSError *error) {
+  
+      id handler = ^(GMSReverseGeocodeResponse *response, NSError *error) {
         if (error == nil) {
             GMSReverseGeocodeResult *result = response.firstResult;
             GMSMarker *marker = [GMSMarker markerWithPosition:cameraPosition.target];
