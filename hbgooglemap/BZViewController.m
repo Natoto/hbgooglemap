@@ -9,13 +9,15 @@
 #import "BZViewController.h"
 #import "AFNetworking.h"
 #import <GoogleMaps/GoogleMaps.h>
-#define GoogleMapKey @"AIzaSyC6UdZfvOoEvOL9fFHQPfRawNix38ToRgM"
-@interface BZViewController ()<GMSAutocompleteFetcherDelegate,GMSMapViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>{
+
+#define GoogleMapKey @"AIzaSyAGQy1JWlswcNJW97BatMCuv_8Fi8ujHFo"
+
+@interface BZViewController ()<GMSMapViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>{
     
     GMSMapView *_googleMapView;
     CLLocationManager *_loacationManager;
     UITextField *_addressTextField;//地址搜索框
-    GMSAutocompleteFetcher *_autoCompleteFetcher;
+//    GMSAutocompleteFetcher *_autoCompleteFetcher;
     UITableView *_mainTableView;//用以展示自动补全结果的表格式图
     NSMutableArray *_dataArray;
     
@@ -31,8 +33,8 @@
     [self createMapView];
     [self createCenterViw];
     [self createTextField];
-    _autoCompleteFetcher = [[GMSAutocompleteFetcher alloc] init];
-    _autoCompleteFetcher.delegate = self;
+//    _autoCompleteFetcher = [[GMSAutocompleteFetcher alloc] init];
+//    _autoCompleteFetcher.delegate = self;
     _dataArray = [NSMutableArray array];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldSelectAll) name:UIKeyboardDidShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldChanged) name:UITextFieldTextDidChangeNotification object:nil];
@@ -117,7 +119,7 @@
         [_dataArray removeAllObjects];
         [_mainTableView reloadData];
     }else{
-        [_autoCompleteFetcher sourceTextHasChanged:_addressTextField.text];
+//        [_autoCompleteFetcher sourceTextHasChanged:_addressTextField.text];
     }
     
 }
@@ -150,13 +152,13 @@
 }
 
 #pragma mark -- autoCompleteDelegate
-- (void)didAutocompleteWithPredictions:(NSArray<GMSAutocompletePrediction *> *)predictions{
-    if (predictions.count) {
-        _mainTableView.hidden = NO;
-        _dataArray = (NSMutableArray *)predictions;
-        [_mainTableView reloadData];
-    }
-}
+//- (void)didAutocompleteWithPredictions:(NSArray<GMSAutocompletePrediction *> *)predictions{
+//    if (predictions.count) {
+//        _mainTableView.hidden = NO;
+//        _dataArray = (NSMutableArray *)predictions;
+//        [_mainTableView reloadData];
+//    }
+//}
 
 - (void)didFailAutocompleteWithError:(NSError *)error{
     
@@ -179,8 +181,8 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    GMSAutocompletePrediction *prediction = _dataArray[indexPath.row];
-    cell.textLabel.text = prediction.attributedFullText.string;
+//    GMSAutocompletePrediction *prediction = _dataArray[indexPath.row];
+//    cell.textLabel.text = prediction.attributedFullText.string;
     return cell;
 }
 
@@ -196,8 +198,8 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    GMSAutocompletePrediction *prediction = _dataArray[indexPath.row];
-    [self geoSearchWithString:prediction.attributedFullText.string];
+//    GMSAutocompletePrediction *prediction = _dataArray[indexPath.row];
+//    [self geoSearchWithString:prediction.attributedFullText.string];
     _mainTableView.hidden = YES;
     
 }
@@ -206,23 +208,23 @@
     /**
      *  发起地理编码请求
      */
-    NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?address=%@&key=%@",[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],GoogleMapKey];
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSDictionary *responseDic = responseObject;
-        if ([responseDic[@"status"] isEqualToString:@"OK"]) {
-            NSArray *returenArray = responseDic[@"results"];
-            CLLocationCoordinate2D search ;
-            NSDictionary *addressDic = returenArray[0];
-            NSDictionary *locationDic = addressDic[@"geometry"][@"location"];
-            search.longitude = [locationDic[@"lng"] floatValue];
-            search.latitude = [locationDic[@"lat"] floatValue];
-            [_googleMapView animateToLocation:search];
-        }
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        
-    }];
+//    NSString *urlString = [NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/geocode/json?address=%@&key=%@",[string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],GoogleMapKey];
+//    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] init];
+//    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        NSDictionary *responseDic = responseObject;
+//        if ([responseDic[@"status"] isEqualToString:@"OK"]) {
+//            NSArray *returenArray = responseDic[@"results"];
+//            CLLocationCoordinate2D search ;
+//            NSDictionary *addressDic = returenArray[0];
+//            NSDictionary *locationDic = addressDic[@"geometry"][@"location"];
+//            search.longitude = [locationDic[@"lng"] floatValue];
+//            search.latitude = [locationDic[@"lat"] floatValue];
+//            [_googleMapView animateToLocation:search];
+//        }
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
     [_addressTextField resignFirstResponder];
 }
 - (void)didReceiveMemoryWarning {

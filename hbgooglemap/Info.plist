@@ -34,5 +34,11 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>开启权限我们将告诉您附近好玩的群组</string>
+	<key>projectPath</key>
+	<string>$(SRCROOT)/$(TARGET_NAME)</string>
+	<key>rootPath</key>
+	<string>$(SRCROOT)/</string>
 </dict>
 </plist>

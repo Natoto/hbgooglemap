@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BQ5-pT-Ofa">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -13,7 +13,7 @@
         <scene sceneID="nLf-u5-U1I">
             <objects>
                 <navigationController id="BQ5-pT-Ofa" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="jGM-cN-dtp">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jGM-cN-dtp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFG-ap-Zag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1116" y="154"/>
+            <point key="canvasLocation" x="-2807" y="204"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="p6l-jO-SGd">
@@ -34,7 +34,7 @@
                         <viewControllerLayoutGuide type="bottom" id="j3t-Vm-jQ2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mBS-Yn-e03">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj4-m1-hrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="-622"/>
+            <point key="canvasLocation" x="-122" y="111"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jMF-yK-ff7">
@@ -53,15 +53,23 @@
                         <viewControllerLayoutGuide type="bottom" id="kcv-gF-bdW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="oYQ-Wo-FOc">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-SX-zzK">
-                                <rect key="frame" x="16" y="103" width="314" height="48"/>
+                                <rect key="frame" x="30" y="210" width="314" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="地图展示、搜索"/>
                                 <connections>
                                     <segue destination="uVv-wu-PvZ" kind="push" id="8wn-nh-A9N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXd-Mi-AhI">
+                                <rect key="frame" x="30" y="111" width="314" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="显示地图"/>
+                                <connections>
+                                    <segue destination="aN6-mF-jQF" kind="push" id="XeN-3a-SVZ"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +79,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPB-cq-GoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-234.40000000000001" y="-233.43328335832086"/>
+            <point key="canvasLocation" x="-1098" y="-536"/>
+        </scene>
+        <!--Show Map View Controller-->
+        <scene sceneID="hvi-IT-W42">
+            <objects>
+                <viewController id="aN6-mF-jQF" customClass="ShowMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JNy-GJ-ZiW"/>
+                        <viewControllerLayoutGuide type="bottom" id="cal-S3-lbf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I5W-BA-0cz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="cci-ie-y4Y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wAz-AP-bUX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-121" y="-906"/>
         </scene>
     </scenes>
 </document>
