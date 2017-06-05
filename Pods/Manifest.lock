@@ -1,0 +1,60 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - GoogleMaps (2.2.0):
+    - GoogleMaps/Maps (= 2.2.0)
+  - GoogleMaps/Base (2.2.0)
+  - GoogleMaps/Maps (2.2.0):
+    - GoogleMaps/Base
+  - GooglePlaces (2.2.0):
+    - GoogleMaps/Base (= 2.2.0)
+  - HBDictionaryKit (0.1.5):
+    - Masonry
+  - HBKit (0.6.54)
+  - Masonry (1.0.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - GoogleMaps
+  - GooglePlaces
+  - HBDictionaryKit (from `https://github.com/Natoto/HBDictionaryKit.git`)
+  - HBKit (from `https://github.com/Natoto/HBFastTableViewCotroller.git`)
+
+EXTERNAL SOURCES:
+  HBDictionaryKit:
+    :git: https://github.com/Natoto/HBDictionaryKit.git
+  HBKit:
+    :git: https://github.com/Natoto/HBFastTableViewCotroller.git
+
+CHECKOUT OPTIONS:
+  HBDictionaryKit:
+    :commit: 14e76b2d1b9adec50b2b98af360568e63c1dcf58
+    :git: https://github.com/Natoto/HBDictionaryKit.git
+  HBKit:
+    :commit: ce619dea487d6fcf5a44ae0a346c175c4023a185
+    :git: https://github.com/Natoto/HBFastTableViewCotroller.git
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  GoogleMaps: 104c418d61ab8a05dff06ed0784c25ea9d37da45
+  GooglePlaces: bca867d5e9da15384c794b945e4226848bc6e9d9
+  HBDictionaryKit: d69a9fe7f1c3bd618cde722399378af6a57151fd
+  HBKit: 7952093e745c19a35731b97cfa967c4eff30f385
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+
+PODFILE CHECKSUM: a4cbf87cba6102a04061865e5dd0344e4392b304
+
+COCOAPODS: 1.1.1
