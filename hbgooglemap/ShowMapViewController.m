@@ -21,17 +21,33 @@
 @end
 
 @implementation ShowMapViewController
-
+{
+    GMSMarker *_london;
+    UIImageView *_londonView;
+}
 - (void)loadView {
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
-                                                            longitude:103.848
-                                                                 zoom:16];
-    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    self.view = mapView;
-    self.mapView = mapView;
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:1.285
+//                                                            longitude:103.848
+//                                                                 zoom:16];
+//    GMSMapView *mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+//    self.view = mapView;
+
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:51.5
+                                                            longitude:-0.127
+                                                                 zoom:14];
+    _mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+    self.view = _mapView;
+    
+    _mapView.delegate = self;
+    
+   
+    
+    self.mapView = _mapView;
     self.camera = camera;
     self.mapView.delegate = self;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -54,11 +70,11 @@
     /**
      * 添加标注
      */
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = self.camera.target;
-    marker.snippet = @"Hello World";
-    marker.appearAnimation = kGMSMarkerAnimationPop;
-    marker.map = self.mapView;
+//    GMSMarker *marker = [[GMSMarker alloc] init];
+//    marker.position = self.camera.target;
+//    marker.snippet = @"Hello World";
+//    marker.appearAnimation = kGMSMarkerAnimationPop;
+//    marker.map = self.mapView;
     
     
 //    CLLocationCoordinate2D panoramaNear = {50.059139,-122.958391};
@@ -68,8 +84,26 @@
 //                        nearCoordinate:panoramaNear];
 //    
 //    self.view = panoView;
+
+    [self addmyhousepostion];
 }
 
+/**
+ * 标注我的地址
+ */
+-(void)addmyhousepostion{
+    UIImage *house = [UIImage imageNamed:@"House"];
+//    house = [house imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    _londonView = [[UIImageView alloc] initWithImage:house];
+    _londonView.tintColor = [UIColor blueColor];
+    
+    CLLocationCoordinate2D position = CLLocationCoordinate2DMake(51.5, -0.127);
+    _london = [GMSMarker markerWithPosition:position];
+    _london.title = @"London";
+    _london.iconView = _londonView;
+    _london.tracksViewChanges = YES;
+    _london.map = self.mapView;
+}
 
 /**
  * 自定义标注
@@ -80,8 +114,13 @@
     marker.position = position;
     //CLLocationCoordinate2DMake(41.887, -87.622);
 //    marker.appearAnimation = kGMSMarkerAnimationPop;
+    //更改图标
+    marker.title = @"黄师傅";
     marker.icon = [UIImage imageNamed:@"smallcar"];
     marker.map = self.mapView;
+    marker.draggable = YES;
+    //修改颜色
+//    marker.icon = [GMSMarker markerImageWithColor:[UIColor blackColor]];
 
 }
 - (void)didReceiveMemoryWarning {
@@ -124,11 +163,16 @@ didTapAtCoordinate:(CLLocationCoordinate2D)coordinate {
 
 }
 
-
+/**
+ * 移除标志
+ */
 - (void)mapView:(GMSMapView *)mapView willMove:(BOOL)gesture {
-    [mapView clear];
+//    [mapView clear];
 }
 
+/**
+ * 摄像机空闲时
+ */
 - (void)mapView:(GMSMapView *)mapView
 idleAtCameraPosition:(GMSCameraPosition *)cameraPosition {
   
