@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D6178B3968F6D202EC0805FF /* libPods-hbgooglemap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C0B62B4A2DB68EB76115930 /* libPods-hbgooglemap.a */; };
+		F81EC1861EE56589007DE927 /* MarkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F81EC1851EE56589007DE927 /* MarkViewController.m */; };
 		F889AD461EE4F4DB00D0D7D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F889AD451EE4F4DB00D0D7D4 /* main.m */; };
 		F889AD491EE4F4DB00D0D7D4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F889AD481EE4F4DB00D0D7D4 /* AppDelegate.m */; };
 		F889AD4C1EE4F4DB00D0D7D4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F889AD4B1EE4F4DB00D0D7D4 /* ViewController.m */; };
@@ -22,6 +23,8 @@
 		3D1DE4D0531A079ADBF557FF /* Pods-hbgooglemap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hbgooglemap.release.xcconfig"; path = "Pods/Target Support Files/Pods-hbgooglemap/Pods-hbgooglemap.release.xcconfig"; sourceTree = "<group>"; };
 		4C0B62B4A2DB68EB76115930 /* libPods-hbgooglemap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-hbgooglemap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9463B0F0D55E825AD1E682BE /* Pods-hbgooglemap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hbgooglemap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-hbgooglemap/Pods-hbgooglemap.debug.xcconfig"; sourceTree = "<group>"; };
+		F81EC1841EE56589007DE927 /* MarkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkViewController.h; sourceTree = "<group>"; };
+		F81EC1851EE56589007DE927 /* MarkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarkViewController.m; sourceTree = "<group>"; };
 		F889AD411EE4F4DB00D0D7D4 /* hbgooglemap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hbgooglemap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F889AD451EE4F4DB00D0D7D4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F889AD471EE4F4DB00D0D7D4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -97,6 +100,8 @@
 				F889AD5C1EE5026900D0D7D4 /* BZViewController.m */,
 				F889AD681EE5517D00D0D7D4 /* ShowMapViewController.h */,
 				F889AD691EE5517D00D0D7D4 /* ShowMapViewController.m */,
+				F81EC1841EE56589007DE927 /* MarkViewController.h */,
+				F81EC1851EE56589007DE927 /* MarkViewController.m */,
 				F889AD501EE4F4DB00D0D7D4 /* Assets.xcassets */,
 				F889AD521EE4F4DB00D0D7D4 /* LaunchScreen.storyboard */,
 				F889AD551EE4F4DB00D0D7D4 /* Info.plist */,
@@ -241,6 +246,7 @@
 				F889AD6A1EE5517D00D0D7D4 /* ShowMapViewController.m in Sources */,
 				F889AD491EE4F4DB00D0D7D4 /* AppDelegate.m in Sources */,
 				F889AD461EE4F4DB00D0D7D4 /* main.m in Sources */,
+				F81EC1861EE56589007DE927 /* MarkViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

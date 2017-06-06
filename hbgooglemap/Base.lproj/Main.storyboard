@@ -42,7 +42,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dj4-m1-hrh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="111"/>
+            <point key="canvasLocation" x="-81" y="755"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jMF-yK-ff7">
@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VX3-SX-zzK">
-                                <rect key="frame" x="30" y="210" width="314" height="48"/>
+                                <rect key="frame" x="6" y="405" width="314" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="地图展示、搜索"/>
                                 <connections>
@@ -65,11 +65,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXd-Mi-AhI">
-                                <rect key="frame" x="30" y="111" width="314" height="64"/>
+                                <rect key="frame" x="6" y="97" width="314" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="显示地图"/>
                                 <connections>
                                     <segue destination="aN6-mF-jQF" kind="push" id="XeN-3a-SVZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ix9-eQ-nT2">
+                                <rect key="frame" x="3" y="188" width="314" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="标注"/>
+                                <connections>
+                                    <segue destination="bY0-Cp-T2k" kind="push" id="rmy-CQ-Rdo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,6 +88,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DPB-cq-GoO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1098" y="-536"/>
+        </scene>
+        <!--Mark View Controller-->
+        <scene sceneID="ZaX-zA-7Xi">
+            <objects>
+                <viewController id="bY0-Cp-T2k" customClass="MarkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SdE-Lx-xZa"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ko3-oD-YMN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5SI-xP-28m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="aoG-h4-6PD"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="862-Yn-c8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="79" y="-135"/>
         </scene>
         <!--Show Map View Controller-->
         <scene sceneID="hvi-IT-W42">

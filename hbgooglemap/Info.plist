@@ -40,5 +40,10 @@
 	<string>$(SRCROOT)/$(TARGET_NAME)</string>
 	<key>rootPath</key>
 	<string>$(SRCROOT)/</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
